@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class WorkPage extends StatelessWidget {
-  const WorkPage({super.key});
+class ContactPage extends StatelessWidget {
+  const ContactPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -9,7 +9,7 @@ class WorkPage extends StatelessWidget {
       height: 500,
       child: Center(
         child: Text(
-          'Work Page',
+          'Contact Page',
           style: Theme.of(context).textTheme.headline1,
         ),
       ),

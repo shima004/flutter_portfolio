@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:flutter_portfolio/widget/button/toggle_darkmode.dart';
+import 'package:scroll_to_index/scroll_to_index.dart';
 
 class Header extends StatefulWidget {
-  const Header({super.key});
+  const Header({super.key, required this.controller});
+  final AutoScrollController controller;
 
   @override
   State<Header> createState() => _HeaderState();
@@ -11,18 +13,16 @@ class Header extends StatefulWidget {
 
 class _HeaderState extends State<Header> {
   final List<String> _menuList = [
-    'Home',
-    'Portfolio',
-    'Blog',
+    'About',
+    'Content',
+    'Work',
     'Contact',
-    'Another',
   ];
 
   @override
   Widget build(BuildContext context) {
-    List<Widget> header = _menuList.map((menu) {
+    List<Widget> header = _menuList.asMap().entries.map((menu) {
       return SizedBox(
-        // margin: const EdgeInsets.only(left: 10),
         height: 40.0,
         child: Row(
           children: [
@@ -36,10 +36,11 @@ class _HeaderState extends State<Header> {
               height: double.infinity,
               child: TextButton(
                 onPressed: () {
-                  String path = menu.toLowerCase();
-                  Navigator.pushNamed(context, '/$path');
+                  widget.controller.scrollToIndex(menu.key,
+                      preferPosition: AutoScrollPosition.begin);
                 },
-                child: Text(menu, style: Theme.of(context).textTheme.headline2),
+                child: Text(menu.value,
+                    style: Theme.of(context).textTheme.headline2),
               ),
             ),
           ],

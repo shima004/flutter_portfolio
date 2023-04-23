@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 
-class BlogPage extends StatelessWidget {
-  const BlogPage({super.key});
+class ContentPage extends StatelessWidget {
+  const ContentPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
+    return Container(
+      height: 500,
+      child: Center(
         child: Text(
-          'Blog Page',
+          'Content Page',
           style: Theme.of(context).textTheme.headline1,
         ),
       ),
