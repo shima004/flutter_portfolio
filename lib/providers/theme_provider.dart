@@ -11,137 +11,143 @@ class ThemeNotifier extends StateNotifier<ThemeState> {
             lightTheme: ThemeData.light().copyWith(
               primaryColor: const Color(0xFF1B1D21),
               scaffoldBackgroundColor: const Color(0xFFE5E5E5),
-              backgroundColor: const Color(0xFFE5E5E5),
               cardColor: Colors.white,
               textTheme: ThemeData.light().textTheme.copyWith(
-                    headline1: const TextStyle(
+                    displayLarge: const TextStyle(
                       color: Color(0xFF1B1D21),
-                      fontSize: 20,
+                      fontSize: 40,
                       fontWeight: FontWeight.bold,
                     ),
-                    headline2: const TextStyle(
-                      color: Color(0xFF1B1D21),
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                    ),
-                    headline3: const TextStyle(
-                      color: Color(0xFF25272B),
-                      fontSize: 14,
-                      fontWeight: FontWeight.bold,
-                    ),
-                    headline4: const TextStyle(
-                      color: Color(0xFF25272B),
-                      fontSize: 12,
-                      fontWeight: FontWeight.bold,
-                    ),
-                    headline5: const TextStyle(
-                      color: Color(0xFF1B1D21),
-                      fontSize: 10,
-                      fontWeight: FontWeight.bold,
-                    ),
-                    headline6: const TextStyle(
-                      color: Color(0xFF1B1D21),
-                      fontSize: 8,
-                      fontWeight: FontWeight.bold,
-                    ),
-                    bodyText1: const TextStyle(
-                      color: Color(0xFF1B1D21),
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                    ),
-                    bodyText2: const TextStyle(
+                    displayMedium: const TextStyle(
                       color: Color(0xFF1B1D21),
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
                     ),
-                    subtitle1: const TextStyle(
-                      color: Color(0xFF1B1D21),
+                    displaySmall: const TextStyle(
+                      color: Color(0xFF25272B),
                       fontSize: 14,
                       fontWeight: FontWeight.bold,
                     ),
-                    subtitle2: const TextStyle(
-                      color: Color(0xFF1B1D21),
+                    headlineMedium: const TextStyle(
+                      color: Color(0xFF25272B),
                       fontSize: 12,
                       fontWeight: FontWeight.bold,
                     ),
-                    caption: const TextStyle(
+                    headlineSmall: const TextStyle(
                       color: Color(0xFF1B1D21),
                       fontSize: 10,
                       fontWeight: FontWeight.bold,
                     ),
-                    overline: const TextStyle(
+                    titleLarge: const TextStyle(
+                      color: Color(0xFF1B1D21),
+                      fontSize: 40,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    titleMedium: const TextStyle(
+                      color: Color(0xFF1B1D21),
+                      fontSize: 30,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    titleSmall: const TextStyle(
+                      color: Color(0xFF1B1D21),
+                      fontSize: 12,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    bodyLarge: const TextStyle(
+                      color: Color(0xFF1B1D21),
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    bodyMedium: const TextStyle(
+                      color: Color(0xFF1B1D21),
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    bodySmall: const TextStyle(
+                      color: Color(0xFF1B1D21),
+                      fontSize: 10,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    labelSmall: const TextStyle(
                       color: Color(0xFF1B1D21),
                       fontSize: 8,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
+              // colorScheme: ColorScheme(background: const Color(0xFFE5E5E5)),
+              colorScheme: ThemeData.light().colorScheme.copyWith(
+                    background: const Color(0xFFE5E5E5),
+                  ),
             ),
             darkTheme: ThemeData.dark().copyWith(
               primaryColor: const Color(0xFFD1D2D3),
               scaffoldBackgroundColor: const Color(0xFF1B1D21),
-              backgroundColor: const Color(0xFF1B1D21),
               cardColor: Colors.blueGrey,
               textTheme: ThemeData.dark().textTheme.copyWith(
-                    headline1: const TextStyle(
+                    displayLarge: const TextStyle(
                       color: Color(0xFFD1D2D3),
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
                     ),
-                    headline2: const TextStyle(
+                    displayMedium: const TextStyle(
                       color: Color(0xFFD1D2D3),
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
                     ),
-                    headline3: const TextStyle(
+                    displaySmall: const TextStyle(
                       color: Color(0xFFABABAD),
                       fontSize: 14,
                       fontWeight: FontWeight.bold,
                     ),
-                    headline4: const TextStyle(
+                    headlineMedium: const TextStyle(
                       color: Color(0xFFABABAD),
                       fontSize: 12,
                       fontWeight: FontWeight.bold,
                     ),
-                    headline5: const TextStyle(
+                    headlineSmall: const TextStyle(
                       color: Colors.white,
                       fontSize: 10,
                       fontWeight: FontWeight.bold,
                     ),
-                    headline6: const TextStyle(
+                    titleLarge: const TextStyle(
                       color: Colors.white,
                       fontSize: 8,
                       fontWeight: FontWeight.bold,
                     ),
-                    bodyText1: const TextStyle(
+                    bodyLarge: const TextStyle(
                       color: Colors.white,
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
                     ),
-                    bodyText2: const TextStyle(
+                    bodyMedium: const TextStyle(
                       color: Colors.white,
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
                     ),
-                    subtitle1: const TextStyle(
+                    titleMedium: const TextStyle(
                       color: Colors.white,
                       fontSize: 14,
                       fontWeight: FontWeight.bold,
                     ),
-                    subtitle2: const TextStyle(
+                    titleSmall: const TextStyle(
                       color: Colors.white,
                       fontSize: 12,
                       fontWeight: FontWeight.bold,
                     ),
-                    caption: const TextStyle(
+                    bodySmall: const TextStyle(
                       color: Color(0xFFABABAD),
                       fontSize: 10,
                       fontWeight: FontWeight.bold,
                     ),
-                    overline: const TextStyle(
+                    labelSmall: const TextStyle(
                       color: Colors.white,
                       fontSize: 8,
                       fontWeight: FontWeight.bold,
                     ),
+                  ),
+              // colorScheme: ColorScheme(background: const Color(0xFF1B1D21)),
+              colorScheme: ThemeData.dark().colorScheme.copyWith(
+                    background: const Color(0xFF1B1D21),
                   ),
             ),
           ),

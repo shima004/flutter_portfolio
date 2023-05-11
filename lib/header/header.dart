@@ -13,8 +13,9 @@ class Header extends StatefulWidget {
 
 class _HeaderState extends State<Header> {
   final List<String> _menuList = [
+    'Home',
     'About',
-    'Content',
+    'Skill',
     'Work',
     'Contact',
   ];
@@ -40,7 +41,7 @@ class _HeaderState extends State<Header> {
                       preferPosition: AutoScrollPosition.begin);
                 },
                 child: Text(menu.value,
-                    style: Theme.of(context).textTheme.headline2),
+                    style: Theme.of(context).textTheme.displayMedium),
               ),
             ),
           ],
@@ -52,7 +53,15 @@ class _HeaderState extends State<Header> {
       margin: const EdgeInsets.only(top: 8, right: 20),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.end,
-        children: [...header, const ToggleDarkMode()],
+        children: [
+          const Padding(
+            padding: EdgeInsets.only(left: 20),
+            child: Text("pacapaca.net", style: TextStyle(fontSize: 20)),
+          ),
+          const Expanded(child: SizedBox()),
+          ...header,
+          const ToggleDarkMode(),
+        ],
       ),
     );
   }

@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio/header/header.dart';
 import 'package:flutter_portfolio/page/about_page.dart';
-import 'package:flutter_portfolio/page/another_page.dart';
-import 'package:flutter_portfolio/page/contact_page.dart';
 import 'package:flutter_portfolio/page/content_page.dart';
+import 'package:flutter_portfolio/page/home_page.dart';
+import 'package:flutter_portfolio/page/skill_page.dart';
+import 'package:flutter_portfolio/widget/panel/left_panel.dart';
+import 'package:flutter_portfolio/widget/panel/right_panel.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 
 class PortfolioPage extends StatefulWidget {
@@ -28,33 +30,42 @@ class _PortfolioPageState extends State<PortfolioPage> {
               ),
             ),
             Expanded(
-              child: ListView(
-                controller: controller,
+              child: Row(
                 children: [
-                  AutoScrollTag(
-                    key: ValueKey(0),
-                    controller: controller,
-                    index: 0,
-                    child: const AboutPage(),
+                  const LeftPanel(),
+                  Expanded(
+                    flex: 12,
+                    child: ListView(
+                      controller: controller,
+                      children: [
+                        AutoScrollTag(
+                          key: const ValueKey(0),
+                          controller: controller,
+                          index: 0,
+                          child: const HomePage(),
+                        ),
+                        AutoScrollTag(
+                          key: const ValueKey(1),
+                          controller: controller,
+                          index: 1,
+                          child: const AboutPage(),
+                        ),
+                        AutoScrollTag(
+                          key: const ValueKey(2),
+                          controller: controller,
+                          index: 2,
+                          child: const SkillPage(),
+                        ),
+                        AutoScrollTag(
+                          key: const ValueKey(3),
+                          controller: controller,
+                          index: 3,
+                          child: const ContentPage(),
+                        ),
+                      ],
+                    ),
                   ),
-                  AutoScrollTag(
-                    key: ValueKey(1),
-                    controller: controller,
-                    index: 1,
-                    child: const ContentPage(),
-                  ),
-                  AutoScrollTag(
-                    key: ValueKey(2),
-                    controller: controller,
-                    index: 2,
-                    child: const WorkPage(),
-                  ),
-                  AutoScrollTag(
-                    key: ValueKey(3),
-                    controller: controller,
-                    index: 3,
-                    child: const ContactPage(),
-                  ),
+                  const RightPanel()
                 ],
               ),
             ),
