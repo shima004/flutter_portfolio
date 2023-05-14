@@ -8,10 +8,11 @@ class HomePage extends StatelessWidget {
     return SizedBox(
       height: 500,
       child: Center(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
+        child: Wrap(
+          alignment: WrapAlignment.center,
           children: [
-            Expanded(
+            Padding(
+              padding: const EdgeInsets.all(40.0),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -31,7 +32,8 @@ class HomePage extends StatelessWidget {
                 ],
               ),
             ),
-            const Expanded(
+            const Padding(
+              padding: EdgeInsets.all(40.0),
               child: CircleAvatar(
                 radius: 100,
                 backgroundImage: AssetImage('images/450x350.png'),

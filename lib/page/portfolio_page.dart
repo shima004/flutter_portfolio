@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio/header/header.dart';
 import 'package:flutter_portfolio/page/about_page.dart';
-import 'package:flutter_portfolio/page/content_page.dart';
 import 'package:flutter_portfolio/page/home_page.dart';
 import 'package:flutter_portfolio/page/skill_page.dart';
+import 'package:flutter_portfolio/page/work_page.dart';
 import 'package:flutter_portfolio/widget/panel/left_panel.dart';
 import 'package:flutter_portfolio/widget/panel/right_panel.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
@@ -48,7 +48,7 @@ class _PortfolioPageState extends State<PortfolioPage> {
                           key: const ValueKey(1),
                           controller: controller,
                           index: 1,
-                          child: const AboutPage(),
+                          child: AboutPage(),
                         ),
                         AutoScrollTag(
                           key: const ValueKey(2),
@@ -60,7 +60,7 @@ class _PortfolioPageState extends State<PortfolioPage> {
                           key: const ValueKey(3),
                           controller: controller,
                           index: 3,
-                          child: const ContentPage(),
+                          child: const WorkPage(),
                         ),
                       ],
                     ),

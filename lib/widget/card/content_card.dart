@@ -23,24 +23,31 @@ class ContentCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: 500,
+    return Container(
+      width: 250,
+      decoration: BoxDecoration(
+        border: Border.all(color: Colors.black),
+        borderRadius: BorderRadius.circular(10),
+      ),
       child: Column(
         children: [
           Text(title),
-          Image(image: AssetImage(imagePath)),
-          Text(description),
-          Text(usedTech),
-          Text(developmentPeriod),
-          Text(position),
-          Text(menbers),
-          Text(githubLink),
+          Image.network(imagePath),
+          _createDiscription("Description", description),
+          _createDiscription("Used Tech", usedTech),
+          _createDiscription("Development Period", developmentPeriod),
+          _createDiscription("Position", position),
+          _createDiscription("Menbers", menbers),
+          _createDiscription("Github Link", githubLink),
         ],
       ),
     );
   }
 }
 
-Widget _createDiscription(String description) {
-  return Text(description);
+Widget _createDiscription(String label, String description) {
+  return Text(
+    "$label: $description",
+    style: const TextStyle(fontSize: 15),
+  );
 }

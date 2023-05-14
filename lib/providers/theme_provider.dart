@@ -65,8 +65,8 @@ class ThemeNotifier extends StateNotifier<ThemeState> {
                     ),
                     bodySmall: const TextStyle(
                       color: Color(0xFF1B1D21),
-                      fontSize: 10,
-                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                      fontWeight: FontWeight.normal,
                     ),
                     labelSmall: const TextStyle(
                       color: Color(0xFF1B1D21),
@@ -110,8 +110,8 @@ class ThemeNotifier extends StateNotifier<ThemeState> {
                       fontWeight: FontWeight.bold,
                     ),
                     titleLarge: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 8,
+                      color: Color(0xFFD1D2D3),
+                      fontSize: 40,
                       fontWeight: FontWeight.bold,
                     ),
                     bodyLarge: const TextStyle(
@@ -125,19 +125,19 @@ class ThemeNotifier extends StateNotifier<ThemeState> {
                       fontWeight: FontWeight.bold,
                     ),
                     titleMedium: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 14,
+                      color: Color(0xFFD1D2D3),
+                      fontSize: 30,
                       fontWeight: FontWeight.bold,
                     ),
                     titleSmall: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 12,
+                      color: Color(0xFFD1D2D3),
+                      fontSize: 20,
                       fontWeight: FontWeight.bold,
                     ),
                     bodySmall: const TextStyle(
-                      color: Color(0xFFABABAD),
-                      fontSize: 10,
-                      fontWeight: FontWeight.bold,
+                      color: Color(0xFFD1D2D3),
+                      fontSize: 20,
+                      fontWeight: FontWeight.normal,
                     ),
                     labelSmall: const TextStyle(
                       color: Colors.white,

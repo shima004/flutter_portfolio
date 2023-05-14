@@ -17,7 +17,7 @@ class SkillChip extends StatelessWidget {
         ),
         child: Text(
           skill,
-          style: Theme.of(context).textTheme.bodyLarge,
+          style: Theme.of(context).textTheme.bodyMedium,
         ),
       ),
     );
