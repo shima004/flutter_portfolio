@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio/widget/card/skill_chip.dart';
+import 'package:flutter_portfolio/widget/text/title_tabel.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 const List<String> skills = [
   "go",
@@ -31,26 +33,17 @@ class SkillPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 500,
+      // height: 500,
       margin: const EdgeInsets.symmetric(horizontal: 50, vertical: 50),
       child: Center(
         child: Column(
           children: [
-            Container(
-              margin: const EdgeInsets.only(bottom: 20),
-              padding: const EdgeInsets.all(8),
-              decoration: BoxDecoration(
-                color: Colors.blue.shade200,
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: Text(
-                "Skills",
-                style: Theme.of(context).textTheme.titleMedium,
-              ),
-            ),
-            Row(
+            const TitleLabel(label: "Skill"),
+            Wrap(
               children: [
-                Expanded(
+                const Spacer(),
+                SizedBox(
+                  width: 400,
                   child: Wrap(
                     children: skills
                         .map((e) => SkillChip(
@@ -59,11 +52,19 @@ class SkillPage extends StatelessWidget {
                         .toList(),
                   ),
                 ),
-                Expanded(
-                  child: Image.asset(
-                    "images/skill.png",
+                // const Spacer(),
+                SizedBox(
+                  height: 300,
+                  child: SvgPicture.asset(
+                    'images/skill.svg',
+                    colorFilter: ColorFilter.mode(
+                      Theme.of(context).primaryColor,
+                      BlendMode.srcATop,
+                    ),
+                    width: 300,
                   ),
                 ),
+                const Spacer(),
               ],
             ),
           ],
