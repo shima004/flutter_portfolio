@@ -35,7 +35,7 @@ class _HeaderState extends State<Header> {
               color: Theme.of(context).primaryColor,
             ),
             SizedBox(
-              width: 80,
+              width: 100,
               height: double.infinity,
               child: TextButton(
                 onPressed: () {
