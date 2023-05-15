@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_portfolio/model/dev_model.dart';
 import 'package:flutter_portfolio/widget/card/content_card.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -50,9 +51,7 @@ Future<List<DevArticleModel>> _loadDevArticle() async {
     Uri.parse(
       'https://sj3whb72cf.microcms.io/api/v1/dev',
     ),
-    headers: {
-      "X-MICROCMS-API-KEY": 'work',
-    },
+    headers: {"X-MICROCMS-API-KEY": dotenv.get('MICROCMS_KEY')},
   );
   List responseJson = json.decode(result.body)['contents'];
   List<DevArticleModel> devArticleList =

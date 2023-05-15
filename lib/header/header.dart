@@ -4,8 +4,10 @@ import 'package:flutter_portfolio/widget/button/toggle_darkmode.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 
 class Header extends StatefulWidget {
-  const Header({super.key, required this.controller});
+  const Header(
+      {super.key, required this.controller, required this.scaffoldKey});
   final AutoScrollController controller;
+  final GlobalKey<ScaffoldState> scaffoldKey;
 
   @override
   State<Header> createState() => _HeaderState();
@@ -49,20 +51,46 @@ class _HeaderState extends State<Header> {
       );
     }).toList();
 
-    return Container(
-      margin: const EdgeInsets.only(top: 8, right: 20),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.end,
-        children: [
-          const Padding(
-            padding: EdgeInsets.only(left: 20),
-            child: Text("pacapaca.net", style: TextStyle(fontSize: 20)),
-          ),
-          const Expanded(child: SizedBox()),
-          ...header,
-          const ToggleDarkMode(),
-        ],
-      ),
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        if (constraints.maxWidth > 700) {
+          return Container(
+            margin: const EdgeInsets.only(top: 8, right: 20),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                const Padding(
+                  padding: EdgeInsets.only(left: 20),
+                  child: Text("pacapaca.net", style: TextStyle(fontSize: 20)),
+                ),
+                const Expanded(child: SizedBox()),
+                ...header,
+                const ToggleDarkMode(),
+              ],
+            ),
+          );
+        } else {
+          return Container(
+            margin: const EdgeInsets.only(top: 8, right: 20),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                const Padding(
+                  padding: EdgeInsets.only(left: 20),
+                  child: Text("pacapaca.net", style: TextStyle(fontSize: 20)),
+                ),
+                const Expanded(child: SizedBox()),
+                IconButton(
+                  onPressed: () {
+                    widget.scaffoldKey.currentState!.openEndDrawer();
+                  },
+                  icon: const Icon(Icons.menu),
+                ),
+              ],
+            ),
+          );
+        }
+      },
     );
   }
 }
