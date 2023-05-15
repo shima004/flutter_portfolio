@@ -6,7 +6,11 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'providers/theme_provider.dart';
 
 void main() async {
-  await dotenv.load(fileName: '.env');
+  try {
+    await dotenv.load(fileName: '.env');
+  } catch (e) {
+    print(e);
+  }
   runApp(const ProviderScope(child: MyHomePage()));
 }
 

@@ -47,12 +47,24 @@ class WorkPage extends StatelessWidget {
 }
 
 Future<List<DevArticleModel>> _loadDevArticle() async {
-  final result = await http.get(
-    Uri.parse(
-      'https://sj3whb72cf.microcms.io/api/v1/dev',
-    ),
-    headers: {"X-MICROCMS-API-KEY": dotenv.get('MICROCMS_KEY')},
-  );
+  const key = String.fromEnvironment('MICROCMS_KEY', defaultValue: "no_key");
+  final http.Response result;
+  if (key == "no_key") {
+    result = await http.get(
+      Uri.parse(
+        'https://sj3whb72cf.microcms.io/api/v1/dev',
+      ),
+      headers: {"X-MICROCMS-API-KEY": dotenv.get('MICROCMS_KEY')},
+    );
+  } else {
+    result = await http.get(
+      Uri.parse(
+        'https://sj3whb72cf.microcms.io/api/v1/dev',
+      ),
+      headers: {"X-MICROCMS-API-KEY": key},
+    );
+  }
+
   List responseJson = json.decode(result.body)['contents'];
   List<DevArticleModel> devArticleList =
       responseJson.map((m) => DevArticleModel.fromJson(m)).toList();
