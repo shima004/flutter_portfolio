@@ -33,7 +33,6 @@ class SkillPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      // height: 500,
       margin: const EdgeInsets.symmetric(horizontal: 50, vertical: 50),
       child: Center(
         child: Column(
@@ -41,18 +40,16 @@ class SkillPage extends StatelessWidget {
             const TitleLabel(label: "Skill"),
             Wrap(
               children: [
-                const Spacer(),
                 SizedBox(
                   width: 400,
                   child: Wrap(
                     children: skills
-                        .map((e) => SkillChip(
+                        .map<Widget>((e) => SkillChip(
                               skill: e,
                             ))
                         .toList(),
                   ),
                 ),
-                // const Spacer(),
                 SizedBox(
                   height: 300,
                   child: SvgPicture.asset(
@@ -64,7 +61,6 @@ class SkillPage extends StatelessWidget {
                     width: 300,
                   ),
                 ),
-                const Spacer(),
               ],
             ),
           ],
