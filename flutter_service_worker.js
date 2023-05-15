@@ -18,15 +18,15 @@ const RESOURCES = {
 "assets/packages/flutter_neumorphic/fonts/NeumorphicIcons.ttf": "32be0c4c86773ba5c9f7791e69964585",
 "assets/FontManifest.json": "9e0649c90f16a7be3d51ab27d6089604",
 "assets/AssetManifest.json": "109050a0606fa26d3abefa49a6da0518",
-"index.html": "14c3c5df3fa8eb542e536a58026dc03d",
-"/": "14c3c5df3fa8eb542e536a58026dc03d",
+"index.html": "31a37e02bb1f1ffb3960c0783b669bbe",
+"/": "31a37e02bb1f1ffb3960c0783b669bbe",
 "favicon.png": "5dcef449791fa27946b3d35ad8803796",
 "version.json": "c420e205d8eac4ccea99913b4a50bfa7",
 "icons/Icon-maskable-192.png": "c457ef57daa1d16f64b27b786ec2ea3c",
 "icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
 "icons/Icon-maskable-512.png": "301a7604d45b3e739efc881eb04896ea",
-"main.dart.js": "9ffe20ccdb7f8539d51c8527a4e6db4b",
+"main.dart.js": "211abbf9814ce576210df11e857dc389",
 "manifest.json": "4d2a074e955647542596586cbde41715"
 };
 
