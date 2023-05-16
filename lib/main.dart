@@ -8,10 +8,12 @@ import 'providers/theme_provider.dart';
 void main() async {
   try {
     await dotenv.load(fileName: '.env');
-  } catch (e) {
-    print(e);
-  }
-  runApp(const ProviderScope(child: MyHomePage()));
+  } catch (e) {}
+  runApp(
+    const ProviderScope(
+      child: MyHomePage(),
+    ),
+  );
 }
 
 class MyHomePage extends ConsumerWidget {
@@ -22,7 +24,7 @@ class MyHomePage extends ConsumerWidget {
     final theme = ref.watch(themeProvider);
 
     return MaterialApp(
-      title: 'My App',
+      title: 'Portfolio',
       debugShowCheckedModeBanner: false,
       theme: theme.isDarkModeEnabled ? theme.darkTheme : theme.lightTheme,
       home: const PortfolioPage(),
